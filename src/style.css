@@ -1,0 +1,103 @@
+/* ── Design tokens ─────────────────────────────────────────────── */
+:root {
+  --bg:        #1e1e2e;
+  --surface:   #181825;
+  --surface2:  #232336;
+  --border:    #313244;
+  --text:      #cdd6f4;
+  --text-dim:  #a6adc8;
+  --accent:    #89b4fa;
+  --accent-2:  #cba6f7;
+  --green:     #a6e3a1;
+  --yellow:    #f9e2af;
+  --red:       #f38ba8;
+  --sidebar-w: 220px;
+  --theory-w:  380px;
+
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 15px;
+  color: var(--text);
+  background: var(--bg);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { overflow: hidden; height: 100vh; display: flex; flex-direction: column; }
+
+#app { display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.875rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.4rem 0.9rem;
+  background: var(--surface2);
+  color: var(--text);
+  transition: background 0.15s, border-color 0.15s;
+}
+button:hover { background: var(--border); border-color: var(--accent); }
+button.primary {
+  background: var(--accent);
+  color: var(--surface);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+button.primary:hover { opacity: 0.85; }
+button.success {
+  background: var(--green);
+  color: var(--surface);
+  border-color: var(--green);
+  font-weight: 600;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+/* Theory markdown prose */
+.prose h1 { font-size: 1.5rem; margin-bottom: 0.75rem; color: var(--accent); }
+.prose h2 { font-size: 1.15rem; margin: 1.25rem 0 0.5rem; color: var(--text); }
+.prose h3 { font-size: 1rem; margin: 1rem 0 0.4rem; color: var(--text-dim); }
+.prose p  { margin-bottom: 0.75rem; line-height: 1.65; color: var(--text-dim); }
+.prose ul, .prose ol { margin: 0.5rem 0 0.75rem 1.25rem; color: var(--text-dim); line-height: 1.7; }
+.prose li { margin-bottom: 0.25rem; }
+.prose strong { color: var(--text); }
+.prose em { color: var(--yellow); font-style: italic; }
+.prose code {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-family: 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 0.85em;
+  color: var(--accent-2);
+}
+.prose pre {
+  background: #11111b;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0.75rem 0;
+  overflow-x: auto;
+}
+.prose pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.82rem;
+  color: var(--text);
+}
+.prose blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 0.75rem;
+  margin: 0.75rem 0;
+  color: var(--text-dim);
+  font-style: italic;
+}
+.prose hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
